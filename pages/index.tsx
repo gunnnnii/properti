@@ -7,9 +7,9 @@ import { useMemo, useState } from 'react';
 import { toRoman } from '@/core/toRoman';
 
 const NumeralInput = () =>{
-  const [value, setValue] = useState<number | null>(null)
+  const [value, setValue] = useState('')
   const numerals = useMemo(() => {
-    const v = value ?? 0
+    const v = +value
     if (v < 1) return 'The number is too small.'
     if (v > 1000) return 'The number is too large.';
     return toRoman(v)
@@ -22,17 +22,11 @@ const NumeralInput = () =>{
         autoFocus
         id="number"
         className={styles.input}
-        value={value ?? ''}
+        value={value}
         placeholder="123"
         min={1}
         max={1000}
-        onChange={e => {
-          const value = e.target.value;
-          if (value) setValue(+value)
-          // this allows the input to be completely empty
-          // otherwise there will always be at least a 0 stuck
-          else setValue(null)
-        }}
+        onChange={e => setValue(e.target.value) }
         type="number"
       />
       <p>The result:</p>

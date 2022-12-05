@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import styles from '@/pages/index.module.css'
 import { useMemo, useState } from 'react';
-import { MAX_SAFE_ROMAN_VALUE, MIN_SAFE_ROMAN_VALUE, toRoman } from '@/core/toRoman';
+import { toRoman } from '@/core/toRoman';
 
 const NumeralInput = () =>{
   const [value, setValue] = useState<number | null>(null)

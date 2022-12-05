@@ -79,6 +79,21 @@
   margin-left: 0.5rem;
 }
 
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 120px;
+}
+
+.converter > * {
+  margin: 0;
+}
+
+.input:invalid {
+  outline: 3px red solid;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

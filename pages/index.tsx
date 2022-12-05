@@ -10,8 +10,8 @@ const NumeralInput = () =>{
   const [value, setValue] = useState<number | null>(null)
   const numerals = useMemo(() => {
     const v = value ?? 0
-    if (v < MIN_SAFE_ROMAN_VALUE) return 'The number is too small.'
-    if (v > MAX_SAFE_ROMAN_VALUE) return 'The number is too large.';
+    if (v < 1) return 'The number is too small.'
+    if (v > 1000) return 'The number is too large.';
     return toRoman(v)
   }, [value]);
 
@@ -24,8 +24,8 @@ const NumeralInput = () =>{
         className={styles.input}
         value={value ?? ''}
         placeholder="123"
-        min={MIN_SAFE_ROMAN_VALUE}
-        max={MAX_SAFE_ROMAN_VALUE}
+        min={1}
+        max={1000}
         onChange={e => {
           const value = e.target.value;
           if (value) setValue(+value)

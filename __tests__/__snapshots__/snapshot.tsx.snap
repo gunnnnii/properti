@@ -28,8 +28,8 @@ exports[`renders homepage unchanged 1`] = `
         <input
           class="input"
           id="number"
-          max="3999"
-          min="0"
+          max="1000"
+          min="1"
           placeholder="123"
           type="number"
           value=""
@@ -40,7 +40,7 @@ exports[`renders homepage unchanged 1`] = `
         <p
           aria-live="polite"
         >
-          N
+          The number is too small.
         </p>
       </div>
     </main>

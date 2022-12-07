@@ -1,14 +1,14 @@
 export const MIN_SAFE_ROMAN_VALUE = 0;
 export const MAX_SAFE_ROMAN_VALUE = 3_999;
 export function toRoman(num: number): string {
-	// the standard form system breaks down for numbers above 3999
-	if (num < MIN_SAFE_ROMAN_VALUE || num > MAX_SAFE_ROMAN_VALUE) throw new Error('toRoman only accepts numbers between 0 and 3999')
+  // the standard form system breaks down for numbers above 3999
+  if (num < MIN_SAFE_ROMAN_VALUE || num > MAX_SAFE_ROMAN_VALUE) throw new Error('toRoman only accepts numbers between 0 and 3999')
 
-	// lets use N to represent 0
+  // lets use N to represent 0
   // https://en.wikipedia.org/wiki/Roman_numerals#Zero
   if (num === 0) return 'N';
   
-	// note: we treat the numerals which have a subtractive form as individual tokens.
+  // note: we treat the numerals which have a subtractive form as individual tokens.
   //       this simplifies things, as it removes the need to special-case them while looping
   //       the numerals this applies to are 4 (IV), 9 (IX), 40 (XL), 90 (XC), 400 (CD) and 900 (CM)
   //       read more about the standard roman numaral notation here: https://en.wikipedia.org/wiki/Roman_numerals#Standard_form
